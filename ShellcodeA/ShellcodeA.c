@@ -36,12 +36,12 @@ VOID Run()
 	UNICODE_STRING uString = { 0 };
 	STRING aString = { 0 };
 
-	WCHAR sUser32[] = { 'u', 's' ,'e' ,'r' ,'3' ,'2' ,'.' ,'d' ,'l' ,'l' };
+	WCHAR sUser32[] = { 'u', 's', 'e', 'r', '3', '2', '.', 'd', 'l', 'l' };
 
-	BYTE sMessageBoxW[] = { 'M','e','s','s','a','g','e','B','o','x','W', 0 };
+	BYTE sMessageBoxW[] = { 'M', 'e', 's', 's', 'a', 'g', 'e', 'B', 'o', 'x', 'W', 0 };
 
-	WCHAR sMsgContent[] = { 'H','e','l','l','o', ' ', 'W','o','r','l','d','!', 0 };
-	WCHAR sMsgTitle[] = { 'D','e','m','o','!', 0 };
+	WCHAR sMsgContent[] = { 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!', 0 };
+	WCHAR sMsgTitle[] = { 'D', 'e', 'm', 'o', '!', 0 };
 
 	///
 	// STEP 1: locate all the required functions
