@@ -1,9 +1,9 @@
 # MessageBoxShellcode
 PIC shellcode to run MessageBoxW.  
 http://phasetw0.com/malware/writing-optimized-windows-shellcode-in-c/
-## MessageboxA
+### MessageboxA
 Pops a messagebox.
-## MessageboxB
+### MessageboxB
 Pops a messagebox from supplied title and text parameters.
-## MessageboxBRunner
+### MessageboxBRunner
 Runs MessageboxB with parameters.
