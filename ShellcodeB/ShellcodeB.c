@@ -19,7 +19,7 @@ typedef NTSTATUS(WINAPI* LDRGETPROCADDRESS)(HMODULE, PANSI_STRING, WORD, PVOID*)
 	string.MaximumLength = string.Length; \
 	string.Buffer = (PCHAR)buffer
 
-VOID Run()
+VOID Run(LPCWSTR szMsgContent, LPCWSTR szMsgTitle)
 {
 #pragma warning( push )
 #pragma warning( disable : 4055 ) // Ignore cast warnings
@@ -40,9 +40,6 @@ VOID Run()
 
 	BYTE sMessageBoxW[] = { 'M', 'e', 's', 's', 'a', 'g', 'e', 'B', 'o', 'x', 'W', 0 };
 
-	WCHAR sMsgContent[] = { 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!', 0 };
-	WCHAR sMsgTitle[] = { 'D', 'e', 'm', 'o', '!', 0 };
-
 	//
 	// STEP 1: locate all the required functions
 	//
@@ -61,5 +58,5 @@ VOID Run()
 	//
 	// STEP 2: pop messagebox
 	//
-	pMessageBoxW(NULL, sMsgContent, sMsgTitle, 0x00000000L);
+	pMessageBoxW(NULL, szMsgContent, szMsgTitle, 0x00000000L);
 }
