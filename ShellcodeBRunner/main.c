@@ -51,11 +51,12 @@ typedef VOID(__stdcall* SHELLCODE)(LPCWSTR, LPCWSTR);
 
 int main()
 {
-	LPCWSTR szMsgContent[] = { 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!', 0 };
-	LPCWSTR szMsgTitle[] = { 'D', 'e', 'm', 'o', '!', 0 };
+	WCHAR szMsgContent[] = { 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!', 0 };
+	WCHAR szMsgTitle[] = { 'D', 'e', 'm', 'o', '!', 0 };
 
 	LPVOID lpPayload = VirtualAlloc(NULL, sizeof(shellcodeBuf), MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
-	if (lpPayload) {
+	if (lpPayload) 
+	{
 		memcpy(lpPayload, shellcodeBuf, sizeof(shellcodeBuf));
 
 		SHELLCODE MyMessageboxW = (SHELLCODE)lpPayload;
